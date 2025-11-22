@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <style>
+             body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            .operator{
+                justify-content: center;
+                align-items: center;
+                color: rgb(13, 114, 55);
+            }
+            .number{
+                color: maroon;
+            }
+            #display {
+                width: 100%;
+                height: 60px;
+                font-size: 28px;
+                text-align: right;
+                padding: 10px;
+                border: none;
+                background-color: #f9f9f9;
+                box-sizing: border-box;
+            }
+            button {
+                width: 100px;
+                height: 80px;
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                border: 1px solid #ddd;
+                background-color: white;
+                transition: background-color 0.2s;
+            }
+        </style>
+    </head>
+    <body>
+            <h1 id="output" style="color: cadetblue;font-size: medium;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 25px;" ><div align="left">Calculator</div></h1>
+            <table border="1"><Tr>
+            <th colspan="5">
+            <input type="text"  value="" id="display" disabled/> </th>
+            </Tr>
+            <tr>
+            <td align="center"><button onClick="reload()" class="operator">C</button></td>
+            <td align="center"><button onClick="appendOperator('+')"  class="operator">+</button></td>
+            <td align="center"><button onClick="appendOperator('-')"   class="operator">-</button></td>
+            <td align="center"><button onClick="appendOperator('*')"  class="operator">*</button></td>
+            <td align="center"><button onClick="appendOperator('/')"  class="operator">/</button></td>
+           </tr>
+           <tr>
+            <td align="center"><button onClick="num('9')" class="number">9</button></td>
+            <td align="center"><button onClick="num('8')" class="number">8</button></td>
+            <td align="center"><button onClick="num('7')" class="number">7</button></td>
+            <td align="center"><button onClick="num('6')" class="number">6</button></td>
+            <td align="center" rowspan="3"><button onClick="calc()" class="operator">=</button></td>
+            </tr>
+            <tr>
+            <td align="center"><button onClick="num('5')" class="number">5</button></td>
+            <td align="center"><button onClick="num('4')" class="number">4</button></td>
+            <td align="center"><button onClick="num('3')" class="number">3</button></td>
+            <td align="center"><button onClick="num('2')" class="number">2</button></td>
+            </tr>
+            <tr>
+            <td align="center"><button onClick="num('1')" class="number">1</button></td>
+            <td align="center" colspan="3"><button onClick="num('0')" class="number">0</button></td>
+            </tr>
+            </table>
+            <script>
+            const output = document.getElementById("display");
+             let input = "";
+
+            function updateDisplay() {
+            output.value = input;
+                     }
+                function reload(){
+                    location.reload()
+                }
+                function num(number){
+                    input=input+number;
+                    updateDisplay();
+                }
+                function appendOperator(op){
+                    input=input+op;
+                    updateDisplay();
+                }
+                function calc(){
+                    try {
+                    input = eval(input).toString();
+                    updateDisplay();
+                } catch(e) {
+                    input = "Error";
+                    updateDisplay();
+                }
+            }
+            </script>
+    </body>
+</html>

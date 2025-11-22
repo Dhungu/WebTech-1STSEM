@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+}
+#topic{
+    font-size:21px;
+    text-align:center;
+    color: red;
+    font-family: arial,sans-serif;
+}
+table{
+    align-items: center;
+    border: size 6px;
+    border:6px solid rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 6px;
+    border-collapse: collapse;
+}
+th,td{
+        border: 6px solid rgb(255, 255, 255);    
+    padding: 6px;              
+    text-align: left;           
+}
+.info{
+    font-size: 21px;
+    color:rgb(148, 141, 150);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+}
+.data{
+    font-size:21px;
+    color:rgb(11, 166, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:normal;
+
+}
+#c1{
+       color: grey;
+    font-size: 14px;
+    width: 300px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    
+}
+#Bio{
+    font-size:40px;
+    text-align:center;
+    color:brown;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
